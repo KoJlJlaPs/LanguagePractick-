@@ -93,3 +93,32 @@ body{
   font-family: 'PT Serif Caption', serif;
   font-size: 24px;
 }
+/* /content */
+
+.about{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.about__text__header{
+  text-transform: capitalize;
+  margin: 0;
+  margin-top: 50px;
+  margin-bottom: 22px;
+  font-weight: bold;
+  font-family: 'TT-Norms-Pro-Bold',sans-serif;
+  font-size: 36px;
+}
+.about__text_description{
+  display: inline-block;
+  white-space: wrap;
+  max-width: 675px;
+  font-family: 'TT-Norms-Pro-Regular', sans-serif;
+  font-size: 25px;
+}
+.eng{
+  margin: 77px 50px 85px 60px ;
+  max-width: 285px;
+  max-height: 285px;
+}

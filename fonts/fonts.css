@@ -1,0 +1,26 @@
+
+@font-face {
+  font-family: 'TT-Norms-Pro-Regular';
+  src: url('../fonts/TTNormsPro-Regular/TTNormsPro-Regular.eot');
+  /* IE 9 Compatibility Mode */
+  src: 
+    /* IE < 9 */
+    url('../fonts/TTNormsPro-Regular/TTNormsPro-Regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/TTNormsPro-Regular/TTNormsPro-Regular.woff') format('woff'),
+    /* Firefox >= 3.6, any other modern browser */
+    url('../fonts/TTNormsPro-Regular/TTNormsPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TT-Norms-Pro-Bold';
+  src: url('../fonts/TTNormsPro-Bold/TTNormsPro-Bold.eot');
+  /* IE 9 Compatibility Mode */
+  src:
+    /* IE < 9 */
+    url('../fonts/TTNormsPro-Bold/TTNormsPro-Bold.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/TTNormsPro-Bold/TTNormsPro-Bold.woff') format('woff'),
+    /* Firefox >= 3.6, any other modern browser */
+    url('../fonts/TTNormsPro-Bold/TTNormsPro-Bold.ttf') format('truetype');
+}
