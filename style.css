@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+body{
+  margin: 0;
+  padding:0;
+}
 .container {
   width: 100%;
   max-width: 1440px;
@@ -8,6 +12,10 @@
 }
 .header__nav {
   display: flex;
+  align-items: center;
+}
+.logo{
+  margin: 15px 50px 15px 29px;
 }
 .nav__items {
   display: flex;
@@ -16,10 +24,14 @@
   margin: 0;
   justify-content: right;
 }
+
 .drop-down-inner {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+.drop-down{
+  margin-right: 20px;
 }
 .nav__items_list {
   cursor: pointer;
@@ -27,5 +39,57 @@
 .list__link {
   text-decoration: none;
   color: black;
-  padding-right: 10px;
+}
+.auth:last-child .list__link{
+  margin-right: 20px;
+}
+.nav__items:last-child{
+  margin:0;
+  margin-right: 25px;
+}
+/* /style nav*/
+
+.main{
+  background: url(./img/bg.jpg) no-repeat ;
+  background-size: cover;
+}
+.content{
+  text-align:center;
+}
+.content__img{
+  margin-bottom: 25px;
+}
+.content__text{
+  display: block;
+}
+
+.name{
+  margin: 0;
+  font-family: 'Unkempt', cursive;
+  font-size: 98px;
+  line-height: 0.70em;
+}
+.slogan{
+  margin-bottom: 45px;
+  font-family: 'Tourney', cursive;
+  font-size: 60px;
+}
+.description{
+  margin-bottom: 40px;
+  font-family: 'PT Serif Caption', serif;
+  font-size: 36px;
+}
+.start-btn{
+  display: inline-block;
+  padding:18px 40px;
+  background-color:#3996EC;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.start-btn__link{
+  text-decoration: none;
+  color:#fff;
+  font-family: 'PT Serif Caption', serif;
+  font-size: 24px;
 }
