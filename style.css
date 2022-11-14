@@ -95,16 +95,21 @@ body{
 }
 /* /content */
 
-.about{
+.about-right{
   display: flex;
   justify-content: end;
+  align-items: center;
+}
+.about-left {
+  display: flex;
+  justify-content: start;
   align-items: center;
 }
 
 .about__text__header{
   text-transform: capitalize;
   margin: 0;
-  margin-top: 50px;
+  
   margin-bottom: 22px;
   font-weight: bold;
   font-family: 'TT-Norms-Pro-Bold',sans-serif;
@@ -117,8 +122,72 @@ body{
   font-family: 'TT-Norms-Pro-Regular', sans-serif;
   font-size: 25px;
 }
-.eng{
-  margin: 77px 50px 85px 60px ;
+.r-img{
+  margin: 75px 50px 85px 60px ;
   max-width: 285px;
   max-height: 285px;
+}
+.l-img {
+  order:-1;
+  margin-right: 60px;
+  max-width: 388px;
+  max-height: 285px;
+}
+
+.video-container{
+ text-align: center;
+ margin-bottom: 85px;
+}
+.video__item{
+  max-width: 927px;;
+}
+
+.learn{
+border-radius: 70px;
+max-width: 30%;
+margin-bottom: 45px;
+}
+/* /about */
+
+.info{
+  background-color:#F8F8F8;
+}
+
+.info__container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.info__block{
+  padding-top: 51px;
+  padding-bottom: 60px;
+}
+.puzzle{
+  max-width: 157px;
+  margin-bottom: 16px;
+}
+
+.info__block_cnt{
+  margin: 0;
+  text-align: center;
+  font-family: 'TT-Norms-Pro-Bold';
+  font-size: 24px;
+}
+.info__block_text{
+  margin: 0;
+  font-family: 'PT Serif Caption';
+  font-size: 16px;
+  text-align: center; 
+}
+
+.users{
+  max-width: 110px;
+  max-height: 138px;
+  margin-bottom: 16px;
+}
+.users+.users{
+  margin-left: 31px;
+}
+.nice{
+ height: 138px;
 }
