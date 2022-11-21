@@ -1,8 +1,9 @@
 * {
   box-sizing: border-box;
 }
-p,h1,h2,h3,h4,h5{
+a,p,h1,h2,h3,h4,h5{
   margin: 0;
+  padding:0;
 }
 
 body{
@@ -257,3 +258,120 @@ margin-bottom: 45px;
   background-color: #FF9E67;
 }
 /* /feedback */
+
+.footer{
+  background-color:#1B1B4D;
+}
+
+.footer__container{
+  display:flex;
+  padding:128px 110px;
+
+}
+.social-club{
+  display: flex;
+  margin-left:65px;
+}
+.social-club-item{
+  display: flex;
+  background-color: #ABABFA;
+  text-decoration: none;
+  cursor: pointer;
+  height: 25px;
+  padding:5px;
+  border-radius:50%;
+}
+.social-club-item+.social-club-item{
+  margin-left: 34px;
+}
+.footer__link__container{
+  display: flex;
+  width: 500px;
+  justify-content: space-evenly;
+}
+
+.footer__link_header{
+  color:#ABABFA;
+  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 12px;
+
+}
+.link{
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+.link-item>a{
+  font-family: 'Inter';
+  color:#ABABFA;
+  margin-bottom: 8px;
+  line-height: 28px;
+  text-decoration: none;
+}
+
+.subscribe__container{
+  max-width: 382px;
+  order: 999;
+  margin-left: auto;
+}
+.subscribe__header{
+  font-family: 'Inter';
+  font-size: 29px;
+  line-height: 42px;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+}
+
+.email-box{
+  background: #1B1B4D;
+  border: 1px solid #8989F8;
+  border-radius: 4px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #5C5CFF;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 23px 0;
+}
+.btn-submit{
+  display: block;
+  padding:13px 0;
+  background-color:#5C5CFF;
+  border-radius:4px;
+  cursor: pointer;
+}
+
+.submit_text{
+  font-family: 'Inter';
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.copyright__container{
+  background-color:#ABABFA;
+  padding:7px 0;
+  font-family: 'Inter';
+  font-size: 14px;
+
+}
+.copyright_content{
+  display: flex;
+  justify-content: space-between;
+}
+.copyright-title{
+  margin-left: 14px;
+  line-height: 10px;
+}
+.text{
+ display: flex;
+}
+.author{
+  text-decoration: none;
+  color:white;
+}
