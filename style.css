@@ -460,12 +460,12 @@ body {
    margin:auto премник Делаем так чтобы окно не сьедало приемника */
   flex-shrink: 0;
   padding: 40px;
-
   background: #fff;
   border: 2px solid black;
 }
 
 .active {
+
   visibility: visible;
 }
 
@@ -495,7 +495,7 @@ body {
   margin-bottom: 30px;
 }
 
-.email-password {
+.reg-form-label {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
@@ -534,6 +534,13 @@ body {
   border-radius: 6px;
   cursor: pointer;
   margin-bottom: 15px;
+  visibility: hidden;
+  position: fixed;
+}
+
+.btn-active {
+  position: relative;
+  visibility: visible;
 }
 
 .auth-links {
