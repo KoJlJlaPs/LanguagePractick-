@@ -1,4 +1,6 @@
-const wordRoute = require("./word_routes");
-module.exports = function (app, db) {
-  wordRoute(app, db);
+const wordRoute = require('./word_routes');
+const { Database } = require('../database/dbOption');
+
+module.exports = function (app) {
+    wordRoute(app, new Database());
 };
