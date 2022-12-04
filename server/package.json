@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "prettier": "prettier --write app/**/*.js"
+    "prettier": "prettier --write ../**/*.js"
   },
   "author": "",
   "license": "ISC"
