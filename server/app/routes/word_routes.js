@@ -5,11 +5,11 @@ const express = require('express');
 module.exports = () => {
     const router = express.Router();
     const exercizes = new Exercize();
-    router.use('/random', async (req, res) => {
+    router.get('/random', async (req, res) => {
         const word = await exercizes.getExercize();
         res.end('Request result = in Russia - ' + word.russia + ', in English - ' + word.english);
     });
-    router.use('/random/:type', async (req, res) => {
+    router.get('/random/:type', async (req, res) => {
         const word = await exercizes.getExercizeType(req.params.type);
         if (word)
             res.end(
