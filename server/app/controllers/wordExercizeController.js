@@ -1,6 +1,8 @@
+const { Words } = require('./../models/Words');
+
 class WordExercize {
-    constructor(db) {
-        this._db = db;
+    constructor() {
+        this._model = new Words();
         this._words = [];
         this._wordsByType = [];
         this._type = '';
@@ -8,31 +10,33 @@ class WordExercize {
         this._wordNumber = 0;
     }
 
+    // Получение слова по теме
     async getExercizeType(type) {
         let result = true;
         if (
             this._type !== '' ||
             this._type !== type ||
-            (this._wordsByType.length > 0 &&
-                this._wordByTypeNumber === this._wordsByType.length)
+            (this._wordsByType.length > 0 && this._wordByTypeNumber === this._wordsByType.length)
         )
             result = await this._setWordsByType(type);
         if (result) return this._wordsByType[this._wordByTypeNumber++];
     }
 
+    // Получение слова
     async getExercize() {
-        if(this._words.length === 0 || this._wordNumber === this._words.length)
-        await this._setWords();
+        if (this._words.length === 0 || this._wordNumber === this._words.length)
+            await this._setWords();
         return this._words[this._wordNumber++];
     }
 
+    // Установление всех слов
     _setWords() {
-        return new Promise((resolve)=>{
-            const snapshot = this._db.readValue('words');
+        return new Promise((resolve) => {
+            const snapshot = this._model.words;
             resolve(snapshot);
-        }).then((snapshot)=>{
-            snapshot.forEach((child)=>{
-                child.forEach((el)=>{
+        }).then((snapshot) => {
+            snapshot.forEach((child) => {
+                child.forEach((el) => {
                     this._words.push(el.val());
                 });
             });
@@ -40,6 +44,7 @@ class WordExercize {
         });
     }
 
+    // Установление слов по теме
     _setWordsByType(type) {
         return new Promise((resolve) => {
             if (this._type === type) {
@@ -47,7 +52,7 @@ class WordExercize {
                 resolve(false);
             } else {
                 this._type = type;
-                const snapshot = this._db.readValue('words/' + this._type);
+                const snapshot = this._model.getByTopic(this._type);
                 resolve(snapshot);
             }
         }).then((snapshot) => {
@@ -65,6 +70,7 @@ class WordExercize {
     }
 }
 
+// Рандомизирование массива
 function shuffle(array) {
     let currentIndex = array.length,
         randomIndex;

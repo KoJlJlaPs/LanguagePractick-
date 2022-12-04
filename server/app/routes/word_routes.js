@@ -1,12 +1,15 @@
 const { Exercize } = require('../controllers/wordExercizeController');
+const express = require('express');
 
-module.exports = (app, db) => {
-    const exercizes = new Exercize(db);
-    app.get('/word/random', async (req, res) => {
+// Роутеры Слов
+module.exports = () => {
+    const router = express.Router();
+    const exercizes = new Exercize();
+    router.use('/random', async (req, res) => {
         const word = await exercizes.getExercize();
         res.end('Request result = in Russia - ' + word.russia + ', in English - ' + word.english);
     });
-    app.get('/word/random/:type', async (req, res) => {
+    router.use('/random/:type', async (req, res) => {
         const word = await exercizes.getExercizeType(req.params.type);
         if (word)
             res.end(
@@ -14,4 +17,5 @@ module.exports = (app, db) => {
             );
         else res.end(`Data don't exist`);
     });
+    return router;
 };
