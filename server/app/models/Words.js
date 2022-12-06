@@ -10,7 +10,7 @@ class Words {
         return this._database.readValue('words');
     }
 
-    set word({ topic, value }) {
+    pushWord(topic, value) {
         this._database.writeValue('words/' + topic, value);
     }
 
