@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>enguage in word</title>
+  <title>Lenguage in word</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="app">
   <header>
     <nav class="header__nav container">
       <img class="logo" src="./img/logo.svg" alt="logo">
@@ -57,7 +58,7 @@
       </li>
       <!-- /auth-btn -->
       <li class="nav__items__list">
-      <a href="#" class="list__link">Регистрация</a>
+      <a href="" class="list__link" @click="goAuth">Регистрация</a>
       </li>
       <!-- /reg-btn -->
     </ul>
@@ -68,8 +69,8 @@
   </header>
   <!-- /header ne do konca -->
 
-  <div class="modal-window active ">
-    <div class="auth__container ">
+  <div class="modal-window active " v-show="modal != ''">
+    <div class="auth__container " v-show="modal == 'auth'">
       <h4 class="auth__title auth_text">
         Авторизация
       </h4>
@@ -121,7 +122,7 @@
     </div>
 </div>
 
-  <main class="main">
+  <main class="main" v-if="page == 'main'">
       <section class="content container">
         <img src="./img/world.svg" alt="world" class="content__img">
         <span class="content__text name">enguage</span>
@@ -154,7 +155,9 @@
     </section>
     <!-- /about 1-st block -->
     <div class="video-container container">
-      <video class="video__item" controls loop muted autoplay src="./video/Good Morning Vietnam _Fortunate Son_.mp4"></video>
+      <video class="video__item" controls loop muted autoplay>
+        <source src="https://firebasestorage.googleapis.com/v0/b/learning-project-87d6c.appspot.com/o/Good%20Morning%20Vietnam%20_Fortunate%20Son_.mp4?alt=media&token=4aca16d9-a9f0-4eb7-a63c-2b9b4563152a" type="">
+      </video>
     </div>
       <!-- /video -->
     <section class="about container">
@@ -330,5 +333,8 @@
       </div>
       </section>
     </footer>
+    </div>
+    <script src="https://unpkg.com/vue@2.7.14/dist/vue.js"></script>
+    <script src="script/app.js"></script>
 </body>
 </html>
