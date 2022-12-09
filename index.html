@@ -83,19 +83,19 @@
             Имя
           </p>
           <div class="auth_input">
-            <input type="text" class="email auth_field " name="surname">
+            <input type="text" class="email auth_field " v-model="authData.last_name" required>
           </div>
           <p class="reg-form-label ">
             Фамилия
           </p>
           <div class="auth_input">
-            <input type="text" class="email auth_field " name="first_name">
+            <input type="text" class="email auth_field " v-model="authData.first_name" required>
           </div>
           <p class="reg-form-label " >
             Отчество
           </p>
           <div class="auth_input">
-            <input type="text" class="email auth_field " name="second_name">
+            <input type="text" class="email auth_field " v-model="authData.second_name" required>
           </div>
         </div>
       </template>
@@ -103,7 +103,7 @@
         E-mail
       </p>
       <div class="auth_input">
-          <input type="email" class="email auth_field " value="E-mail" name="email">
+          <input type="email" class="email auth_field " value="E-mail" v-model="loginData.email" required>
       </div>
         <!-- /email -->
 
@@ -111,11 +111,11 @@
           Passowrd
       </p>
       <div class="auth_input">
-          <input type="password" class="passowrd auth_field" name="password">
+          <input type="password" class="passowrd auth_field" v-model="loginData.password" required>
       </div>
         <!-- /password -->
       <button v-if="modal == 'login'" class="btn-auth-submit btn-active"> Войти</button>
-      <button v-else class="btn-auth-submit btn-active"> Зарегестрироваться</button>
+      <button v-else class="btn-auth-submit btn-active" @click="auth"> Зарегестрироваться</button>
       <p class="auth-links" v-if="modal=='login'">
           Нет аккаунта? 
           <a @click="goAuth" class="auth-links reg">Зарегестрироваться</a>
@@ -123,7 +123,7 @@
       </p>
       <p class="auth-links" v-else>
         Уже есть аккаунт?
-        <a @click="goLogin" class="auth-links reg">Войти</a>
+        <a @click="goLogin" class="auth-links reg">Войти в систему</a>
       </p>
     </form>
 </div>

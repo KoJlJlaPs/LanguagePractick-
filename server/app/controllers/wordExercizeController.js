@@ -11,7 +11,8 @@ class WordExercize {
     }
 
     // Получение слова по теме
-    async getExercizeType(type) {
+    async getExercizeType(req,res) {
+        const type = req.params.type;
         let result = true;
         if (
             this._type !== '' ||
@@ -19,14 +20,21 @@ class WordExercize {
             (this._wordsByType.length > 0 && this._wordByTypeNumber === this._wordsByType.length)
         )
             result = await this._setWordsByType(type);
-        if (result) return this._wordsByType[this._wordByTypeNumber++];
+        if (result) {
+            const word =  this._wordsByType[this._wordByTypeNumber++];
+            res.end(
+                'Request result = in Russia - ' + word.russia + ', in English - ' + word.english,
+            );
+        }
+        else res.end(`Data don't exist`);
     }
 
     // Получение слова
-    async getExercize() {
+    async getExercize(req,res) {
         if (this._words.length === 0 || this._wordNumber === this._words.length)
             await this._setWords();
-        return this._words[this._wordNumber++];
+        const word = this._words[this._wordNumber++];
+        res.end('Request result = in Russia - ' + word.russia + ', in English - ' + word.english);
     }
 
     // Установление всех слов
