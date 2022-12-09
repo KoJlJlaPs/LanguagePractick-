@@ -54,11 +54,11 @@
 
     <ul class="nav__items auth">
       <li class="nav__items__list">
-      <a href="" class="list__link">Вход</a>
+      <a class="list__link" @click="goLogin">Вход</a>
       </li>
       <!-- /auth-btn -->
       <li class="nav__items__list">
-      <a href="" class="list__link" @click="goAuth">Регистрация</a>
+      <a class="list__link" @click="goAuth">Регистрация</a>
       </li>
       <!-- /reg-btn -->
     </ul>
@@ -69,39 +69,41 @@
   </header>
   <!-- /header ne do konca -->
 
-  <div class="modal-window active " v-show="modal != ''">
-    <div class="auth__container " v-show="modal == 'auth'">
+  <div class="modal-window active " v-show="modal != ''" @click = "exitModal">
+    <form class="auth__container " v-show="modal == 'auth' || modal == 'login'" action="" method="post">
       <h4 class="auth__title auth_text">
-        Авторизация
+        {{modal=='auth'?'Авторизация':'Вход в систему'}}
       </h4>
-      <p class="auth_slogan auth_text">
-        Давайте станем лучше вместе!
-      </p>
-      <div class="reg-form">
-        <p class="reg-form-label " >
-        Имя
+      <template v-if="modal == 'auth'">
+        <p class="auth_slogan auth_text">
+          Давайте станем лучше вместе!
         </p>
-      <div class="auth_input">
-          <input type="text" class="email auth_field ">
-      </div>
-       <p class="reg-form-label " >
-        Фамилия
-       </p>
-      <div class="auth_input">
-          <input type="text" class="email auth_field ">
-      </div>
-      <p class="reg-form-label " >
-        Отчество
-       </p>
-      <div class="auth_input">
-          <input type="text" class="email auth_field ">
-      </div>
-      </div>
+        <div class="reg-form">
+          <p class="reg-form-label ">
+            Имя
+          </p>
+          <div class="auth_input">
+            <input type="text" class="email auth_field " name="surname">
+          </div>
+          <p class="reg-form-label ">
+            Фамилия
+          </p>
+          <div class="auth_input">
+            <input type="text" class="email auth_field " name="first_name">
+          </div>
+          <p class="reg-form-label " >
+            Отчество
+          </p>
+          <div class="auth_input">
+            <input type="text" class="email auth_field " name="second_name">
+          </div>
+        </div>
+      </template>
       <p class="reg-form-label " >
         E-mail
       </p>
       <div class="auth_input">
-          <input type="text" class="email auth_field " value="E-mail">
+          <input type="email" class="email auth_field " value="E-mail" name="email">
       </div>
         <!-- /email -->
 
@@ -109,17 +111,21 @@
           Passowrd
       </p>
       <div class="auth_input">
-          <input type="password" class="passowrd auth_field" >
+          <input type="password" class="passowrd auth_field" name="password">
       </div>
         <!-- /password -->
-      <p class="btn-auth-submit btn-active"> Войти</p>
-      <p class="btn-auth-submit btn-active"> Зарегестрироваться</p>
-      <p class="auth-links">
+      <button v-if="modal == 'login'" class="btn-auth-submit btn-active"> Войти</button>
+      <button v-else class="btn-auth-submit btn-active"> Зарегестрироваться</button>
+      <p class="auth-links" v-if="modal=='login'">
           Нет аккаунта? 
-          <a href="#" class="auth-links reg">Зарегестрироваться</a>   
+          <a @click="goAuth" class="auth-links reg">Зарегестрироваться</a>
           <a href="#" class="auth-links for">Забыл пароль?</a> 
       </p>
-    </div>
+      <p class="auth-links" v-else>
+        Уже есть аккаунт?
+        <a @click="goLogin" class="auth-links reg">Войти</a>
+      </p>
+    </form>
 </div>
 
   <main class="main" v-if="page == 'main'">
