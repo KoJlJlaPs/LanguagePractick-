@@ -7,7 +7,7 @@ class AuthenticationController{
 
     // Авторизация
     auth(req,res){
-        console.log(req.body);
+        console.log(req);
         // this._model.user = {
         //
         // }
@@ -15,7 +15,7 @@ class AuthenticationController{
     }
 
     // Вход в систему
-    login(body){
+    login(req,res){
 
     }
 }

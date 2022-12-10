@@ -4,7 +4,7 @@ const cors = require("cors")
 const app = express();
 const port = 3000;
 
-const whitelist = ["http://localhost:63342"]
+const whitelist = ["http://localhost:63342",'http://127.0.0.1:5500']
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || whitelist.indexOf(origin) !== -1) {
@@ -15,6 +15,7 @@ app.use(cors({
     },
     credentials: true,
 }))
+app.use(express.json());
 
 // app.use(bodyParser.urlencoded({ extended: true }));
 require('./app/routes')(app);

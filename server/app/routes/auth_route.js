@@ -6,5 +6,9 @@ module.exports = () => {
     const controller = new Auth();
     router.post('/auth', controller.auth);
     router.post('/login',controller.login);
+    router.post('/test',(req,res)=>{
+        console.log(req.query);
+        res.end('Exit');
+    })
     return router;
 }
