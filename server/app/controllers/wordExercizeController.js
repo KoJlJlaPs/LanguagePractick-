@@ -11,7 +11,7 @@ class WordExercize {
     }
 
     // Получение слова по теме
-    async getExercizeType(req,res) {
+    async getExercizeType(req, res) {
         const type = req.params.type;
         let result = true;
         if (
@@ -21,16 +21,15 @@ class WordExercize {
         )
             result = await this._setWordsByType(type);
         if (result) {
-            const word =  this._wordsByType[this._wordByTypeNumber++];
+            const word = this._wordsByType[this._wordByTypeNumber++];
             res.end(
                 'Request result = in Russia - ' + word.russia + ', in English - ' + word.english,
             );
-        }
-        else res.end(`Data don't exist`);
+        } else res.end(`Data don't exist`);
     }
 
     // Получение слова
-    async getExercize(req,res) {
+    async getExercize(req, res) {
         if (this._words.length === 0 || this._wordNumber === this._words.length)
             await this._setWords();
         const word = this._words[this._wordNumber++];

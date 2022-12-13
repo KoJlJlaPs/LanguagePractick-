@@ -1,6 +1,6 @@
-const {Database} = require("../database/dbOption");
+const { Database } = require('../database/dbOption');
 
-class User{
+class User {
     constructor() {
         this._database = new Database();
     }
@@ -9,12 +9,12 @@ class User{
         return this._database.readValue('users');
     }
 
-    set user(value) {
+    setUser(value) {
         this._database.writeValue('users/', value);
     }
 
-    getUser(id){
-        return this._database.readValue('users/'+id);
+    getUser(id) {
+        return this._database.readValue('users/' + id);
     }
 }
 

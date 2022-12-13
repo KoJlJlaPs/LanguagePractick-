@@ -5,14 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/controllers/wordExercizeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/wordExercizeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/database/dbOption.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/database/dbOption.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/models/Words.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/Words.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/word_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/word_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/prettier.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/prettier.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +66,7 @@
       <workItem from="1670340098271" duration="820000" />
       <workItem from="1670520841745" duration="411000" />
       <workItem from="1670599496323" duration="9172000" />
+      <workItem from="1670910849558" duration="7622000" />
     </task>
     <servers />
   </component>
