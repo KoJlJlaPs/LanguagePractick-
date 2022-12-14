@@ -5,7 +5,7 @@ const express = require('express');
 module.exports = () => {
     const router = express.Router();
     const exercizes = new Exercize();
-    router.get('/random', exercizes.getExercize);
-    router.get('/random/:type', exercizes.getExercizeType);
+    router.get('/random', (req, res) => exercizes.getExercize(req, res));
+    router.get('/random/:type', (req, res) => exercizes.getExercizeType(req, res));
     return router;
 };

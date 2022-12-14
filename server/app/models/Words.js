@@ -1,4 +1,4 @@
-const { Database } = require('../database/dbOption');
+const { Database } = require('../options/dbOption');
 
 // Модель Слов
 class Words {

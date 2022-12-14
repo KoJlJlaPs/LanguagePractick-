@@ -1,4 +1,4 @@
-const { Database } = require('../database/dbOption');
+const { Database } = require('../options/dbOption');
 
 class User {
     constructor() {
@@ -18,4 +18,4 @@ class User {
     }
 }
 
-module.exports = User;
+module.exports = { User };
