@@ -1,19 +1,13 @@
-const { ref, push, getDatabase, child, get } = require('firebase/database');
-const config = require('../../config/db');
-const { initializeApp } = require('firebase/app');
+const { ref, push, child, get } = require('firebase/database');
+const database = require("../firebase/app").database;
 
 class Database {
-    constructor() {
-        const dbApp = initializeApp({ databaseURL: config.url });
-        this._database = getDatabase(dbApp);
-    }
-
     readValue(valuePath) {
-        return get(child(ref(this._database), valuePath));
+        return get(child(ref(database), valuePath));
     }
 
     writeValue(path, value) {
-        push(ref(this._database, path), value);
+        push(ref(database, path), value);
     }
 }
 
