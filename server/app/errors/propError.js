@@ -1,3 +1,4 @@
+// Класс для проверки валидности переменных
 class PropertyError {
     _data;
     _name;
@@ -6,7 +7,9 @@ class PropertyError {
     _maxlength;
     _validate;
     _required;
-    constructor({ name, data, type, minlength, maxlength, validate, required }) {
+    _equal;
+    _unique;
+    constructor({ name, data, type, minlength, maxlength, validate, required,equal,unique }) {
         this._data = data;
         this._name = name;
         this._type = type;
@@ -14,6 +17,8 @@ class PropertyError {
         this._maxlength = maxlength;
         this._validate = validate;
         this._required = required;
+        this._equal = equal;
+        this._unique = unique;
     }
 
     get minLengthError() {
@@ -36,6 +41,14 @@ class PropertyError {
         return `Переменная ${this._name} должна иметь вид email`;
     }
 
+    get uniqueError(){
+
+    }
+
+    get equalError(){
+
+    }
+
     test() {
         if (this._required && !this._data) return this.propertyError;
         if (this._type && typeof this._data !== this._type) return this.typeError;
@@ -43,6 +56,8 @@ class PropertyError {
         if (this._maxlength && this._data.length > this._maxlength) return this.maxLengthError;
         if (this._validate === 'email' && !this._data.match(/^\S+@\S+\.\S+$/))
             return this.emailValidateError;
+        if(this._unique) return this.uniqueError;
+        if(this._equal) return this.equalError;
     }
 }
 

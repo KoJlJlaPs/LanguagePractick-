@@ -8,6 +8,5 @@ module.exports = function (propArray,data){
         const error = new PropertyError(prop).test();
         if (error) errors.push({ [dataKey]: error });
     }
-
     return errors;
 }
