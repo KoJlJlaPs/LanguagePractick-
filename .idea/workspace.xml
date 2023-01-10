@@ -4,14 +4,9 @@
     <list default="true" id="05f103a7-f541-4538-90e3-9b659fa233e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/database/dbOption.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/errors/propError.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/errors/propError.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/errors/userPropertyError.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/errors/userPropertyError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/firebase-auth/auth.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/models/Words.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/Words.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/auth_route.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/auth_route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/word_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/word_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/options/dbOption.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/options/dbOption.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
@@ -73,7 +68,8 @@
       <workItem from="1670520841745" duration="411000" />
       <workItem from="1670599496323" duration="9172000" />
       <workItem from="1670910849558" duration="7622000" />
-      <workItem from="1670993550551" duration="6397000" />
+      <workItem from="1670993550551" duration="13048000" />
+      <workItem from="1673335218441" duration="3271000" />
     </task>
     <servers />
   </component>

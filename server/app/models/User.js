@@ -16,6 +16,10 @@ class User {
     getUser(id) {
         return this._database.readValue('users/' + id);
     }
+
+    findOneByEmail(email){
+        return this._database.find('user',"email",email);
+    }
 }
 
 module.exports = { User };
