@@ -15,6 +15,10 @@ class Database {
     writeValue(path, value) {
         push(ref(this._database, path), value);
     }
+
+    find(table,parameter,value){
+        return this._database.ref(table).orderByChild(parameter).equalTo(value).get();
+    }
 }
 
 module.exports = {

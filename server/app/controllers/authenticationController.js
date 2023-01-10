@@ -1,14 +1,10 @@
-const { User } = require('../models/User');
-const auth = require('../firebase-auth/auth');
 const testAuthProperty = require('../errors/userPropertyError');
+const {AuthService} = require("../options/auth");
 
 class AuthenticationController {
-    _model;
-
     constructor() {
-        this._model = new User();
+        this._service = new AuthService();
     }
-
     // Авторизация
     auth(req, res) {
         const data = req.query;
@@ -17,19 +13,14 @@ class AuthenticationController {
             res.status(301).json(errors);
             return;
         }
-        auth.createUser({
-            email: data.email,
-            displayName:
+        this._service.signUp(data.email,
                 data.first_name +
                 ' ' +
-                data.last_name[0].toUpperCase() +
+                data.last_name +
                 '.' +
-                data.patronymic[0].toUpperCase() +
-                '.',
-            password: data.password,
-        })
-            .then((result) => {
-                this._createUser(result.uid);
+                data.patronymic +
+                '.', data.password)
+            .then(() => {
                 res.statusCode = 200;
                 res.json({ message: 'Good' });
             })
@@ -37,13 +28,6 @@ class AuthenticationController {
                 console.log('Error: ' + error);
                 res.status(301).json({ error: error.message });
             });
-    }
-
-    _createUser(uid) {
-        this._model.setUser({
-            words: '',
-            id: uid,
-        });
     }
 
     // Вход в систему
