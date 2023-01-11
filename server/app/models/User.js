@@ -17,8 +17,8 @@ class User {
         return this._database.readValue('users/' + id);
     }
 
-    findOneByEmail(email){
-        return this._database.find('user',"email",email);
+    findOneByEmail(email) {
+        return this._database.find('users', 'email', email);
     }
 }
 

@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="05f103a7-f541-4538-90e3-9b659fa233e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/errors/loginPropertyError.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/errors/loginPropertyError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/errors/propError.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/errors/propError.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/errors/testProperties.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/errors/testProperties.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/errors/userPropertyError.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/errors/userPropertyError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/firebase/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/firebase/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/options/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/auth/authServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/options/dbOption.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/options/dbOption.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/word_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/word_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +52,7 @@
       <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server\app\auth" />
       <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server\config" />
       <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server\app" />
     </key>
@@ -69,6 +76,8 @@
       <workItem from="1670993550551" duration="13048000" />
       <workItem from="1673335218441" duration="3406000" />
       <workItem from="1673344991392" duration="1615000" />
+      <workItem from="1673379582707" duration="262000" />
+      <workItem from="1673422478964" duration="10713000" />
     </task>
     <servers />
   </component>

@@ -1,12 +1,18 @@
 const PropertyError = require('./propError');
 
-module.exports = function (propArray,data){
+// Проверка параметров
+module.exports = function (propArray, data) {
     const errors = [];
-    for (const dataKey in data) {
-        const prop = propArray.find((p) => p.name === dataKey);
-        prop.data = data[dataKey];
-        const error = new PropertyError(prop).test();
-        if (error) errors.push({ [dataKey]: error });
+    for (const propKey in propArray) {
+        const prop = propArray[propKey];
+        const propData = data[prop.name];
+        if (prop.required && !propData)
+            errors.push({ [prop.name]: `Нет обязательной переменной ${prop.name}` });
+        else {
+            prop.data = propData;
+            const error = new PropertyError(prop).test();
+            if (error) errors.push({ [prop.name]: error });
+        }
     }
     return errors;
-}
+};
