@@ -13,7 +13,7 @@ module.exports = class AuthService {
     async signUp(email, name, password) {
         let userRecord;
         userRecord = await this._model.findOneByEmail(email);
-        if (userRecord) throw Error('Email is not unique');
+        if (userRecord.length > 0) throw Error('Email is not unique');
         const passwordHashed = await argon2.hash(password);
 
         this._model.setUser({
@@ -31,11 +31,9 @@ module.exports = class AuthService {
     }
 
     async login(email, password) {
-        let userRecord;
-        userRecord = await this._model.findOneByEmail(email);
-        console.log(userRecord);
+        let userRecord = await this._model.findOneByEmail(email);
 
-        if (!userRecord) throw Error('User not found');
+        if (userRecord.length == 0) throw Error('User not found');
         const record = userRecord[0];
         const correctPassword = await argon2.verify(record.password, password);
         if (!correctPassword) throw Error('Incorrect password');

@@ -53,14 +53,22 @@
     Здесь еще надо ебануть выпадающие списки через after-->
 
     <ul class="nav__items auth">
-      <li class="nav__items__list">
-      <a class="list__link" @click="goLogin">Вход</a>
-      </li>
-      <!-- /auth-btn -->
-      <li class="nav__items__list">
-      <a class="list__link" @click="goAuth">Регистрация</a>
-      </li>
-      <!-- /reg-btn -->
+      <template v-if="user.token == ''">
+        <li class="nav__items__list">
+          <a class="list__link" @click="goLogin">Вход</a>
+        </li>
+        <!-- /auth-btn -->
+        <li class="nav__items__list">
+          <a class="list__link" @click="goAuth">Регистрация</a>
+        </li>
+        <!-- /reg-btn -->
+      </template>
+      <template v-else>
+        <li class="nav__items__list">
+          <a class="list__link" @click="logout">Выход</a>
+        </li>
+        <!-- /logout-btn -->
+      </template>
     </ul>
     </div>
     <!-- Типы две кнопки на вход и регистрацию
@@ -69,7 +77,7 @@
   </header>
   <!-- /header ne do konca -->
 
-  <div class="modal-window active " v-show="modal != ''" @click = "exitModal">
+  <div class="modal-window active " v-if="modal != ''" @click = "exitModal">
     <form class="auth__container " v-show="modal == 'auth' || modal == 'login'" action="" method="post">
       <h4 class="auth__title auth_text">
         {{modal=='auth'?'Авторизация':'Вход в систему'}}
@@ -114,7 +122,7 @@
           <input type="password" class="password auth_field" v-model="loginData.password" required>
       </div>
         <!-- /password -->
-      <button v-if="modal == 'login'" class="btn-auth-submit btn-active"> Войти</button>
+      <button v-if="modal == 'login'" class="btn-auth-submit btn-active" @click="login"> Войти</button>
       <button v-else class="btn-auth-submit btn-active" @click="auth"> Зарегестрироваться</button>
       <p class="auth-links" v-if="modal=='login'">
           Нет аккаунта? 

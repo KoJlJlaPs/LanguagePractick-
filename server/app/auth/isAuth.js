@@ -7,8 +7,8 @@ const getTokenFromHeader = (req) => {
 };
 
 module.exports = jwt({
-    secret: signature,
-    userProperty: 'token',
-    getToken: getTokenFromHeader,
-    algorithms: ['HS256'],
-});
+            secret: signature,
+            userProperty: 'token',
+            getToken: getTokenFromHeader,
+            algorithms: ['HS256'],
+        });

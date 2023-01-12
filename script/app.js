@@ -12,6 +12,11 @@ const app = new Vue({
       last_name: "",
       first_name: "",
     },
+    user:{
+      email:"",
+      displayName:"",
+      token:""
+    }
   },
   methods: {
     goAuth() {
@@ -34,11 +39,27 @@ const app = new Vue({
       };
       console.log(await goToAddress("user/auth", body, "POST"));
     },
+    async login(e){
+      e.preventDefault();
+      const body = {
+        email: this.loginData.email,
+        password: this.loginData.password,
+      };
+      const result = await goToAddress("user/login", body, "POST");
+      if(result?.message == "Good"){
+        this.user.email = result.data.email;
+        this.user.displayName = result.data.name;
+        this.user.token = result.token;
+        this.modal = "";
+      }else
+        this.user.token = "";
+    },
+    logout(){}
   },
 });
 
 const START_URL = "http://localhost:3000/";
-async function goToAddress(url, body, method = "GET") {
+async function goToAddress(url, body, method = "GET",token = null) {
   let query = START_URL + url + "?";
   for (const key in body) {
     if (Object.hasOwnProperty.call(body, key)) {
@@ -46,14 +67,17 @@ async function goToAddress(url, body, method = "GET") {
       query += key + "=" + element.replaceAll(" ", "%") + "&";
     }
   }
+  const headers = {
+    "Content-Type": "application/json;charset=utf-8",
+  };
+  if(token)
+    headers['Authorization'] = "Bearer " + token;
   const response = await fetch(query, {
     method,
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
+    headers,
   });
-  if (response.ok) {
+  if (response.ok)
     console.log("Hello");
-  }
+
   return await response.json();
 }

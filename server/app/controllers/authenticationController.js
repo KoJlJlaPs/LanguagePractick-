@@ -57,13 +57,17 @@ class AuthenticationController {
                     data: {
                         email: data.user.email,
                         name: data.user.name,
+                        token: data.token
                     },
                 });
             })
             .catch((error) => {
-                console.log(error);
-                res.status(301).json({ error: error.message });
+                res.status(401).json({ error: error.message });
             });
+    }
+
+    logout(req,res){
+        res.setHeader("Authorization","");
     }
 }
 
