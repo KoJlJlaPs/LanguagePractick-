@@ -51,23 +51,23 @@ class AuthenticationController {
             .login(data.email, data.password)
             .then((data) => {
                 res.statusCode = 200;
-                res.setHeader('Authorization', 'Bearer ' + data.token);
+                res.cookie('Authorization',data.token,{maxAge:90000,httpOnly:true});
+                console.log(res.cookie['Authorization']);
                 res.json({
                     message: 'Good',
                     data: {
                         email: data.user.email,
-                        name: data.user.name,
-                        token: data.token
+                        name: data.user.name
                     },
                 });
             })
             .catch((error) => {
-                res.status(401).json({ error: error.message });
+                res.status(404).json({ error: error.message });
             });
     }
 
     logout(req,res){
-        res.setHeader("Authorization","");
+        res.cookie("Authorization","");
     }
 }
 

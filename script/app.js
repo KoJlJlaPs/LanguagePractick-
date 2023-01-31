@@ -45,14 +45,17 @@ const app = new Vue({
         email: this.loginData.email,
         password: this.loginData.password,
       };
-      const result = await goToAddress("user/login", body, "POST");
-      if(result?.message == "Good"){
+      const response = await goToAddress("user/login", body, "POST");
+      const result = await response.json();
+      if(result.message == "Good"){
         this.user.email = result.data.email;
         this.user.displayName = result.data.name;
-        this.user.token = result.token;
+        this.user.token = await response.cookie("Authorization");
+        console.log(this.user.token);
         this.modal = "";
       }else
         this.user.token = "";
+      console.log(result);
     },
     logout(){}
   },
@@ -70,14 +73,8 @@ async function goToAddress(url, body, method = "GET",token = null) {
   const headers = {
     "Content-Type": "application/json;charset=utf-8",
   };
-  if(token)
-    headers['Authorization'] = "Bearer " + token;
-  const response = await fetch(query, {
+  return await fetch(query, {
     method,
     headers,
   });
-  if (response.ok)
-    console.log("Hello");
-
-  return await response.json();
 }

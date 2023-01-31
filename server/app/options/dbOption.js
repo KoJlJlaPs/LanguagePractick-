@@ -4,11 +4,9 @@ const {
     child,
     get,
     onValue,
-    orderByValue,
     orderByChild,
     query,
     equalTo,
-    limitToFirst,
 } = require('firebase/database');
 const { database } = require('../firebase/app');
 
@@ -25,10 +23,17 @@ class Database {
         return new Promise((resolve) => {
             const refData = query(ref(database, table), orderByChild(parameter), equalTo(value));
             onValue(refData, (snapshot) => {
-                const value = [];
                 const snap = snapshot.val();
-                for (const snapshotKey in snap) value.push(snap[snapshotKey]);
-                resolve(value);
+                if(snap == null)
+                    resolve({error:'Data don`t founded'});
+                else{
+                    const key = Object.keys(snap)[0];
+                    const value = {
+                        _id:key,
+                        ...snap[key]
+                    };
+                    resolve(value);
+                }
             });
         });
     }
