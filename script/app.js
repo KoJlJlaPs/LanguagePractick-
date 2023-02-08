@@ -59,6 +59,10 @@ const app = new Vue({
     },
     logout(){}
   },
+  mounted:function(){
+    this.user.token = document.cookie['session'];
+    console.log(document.cookie['session']);
+  }
 });
 
 const START_URL = "http://localhost:3000/";
@@ -73,6 +77,8 @@ async function goToAddress(url, body, method = "GET",token = null) {
   const headers = {
     "Content-Type": "application/json;charset=utf-8",
   };
+  if(token)
+    headers['auth'] = token
   return await fetch(query, {
     method,
     headers,

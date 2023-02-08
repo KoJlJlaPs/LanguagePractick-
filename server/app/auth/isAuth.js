@@ -1,9 +1,9 @@
-const { signature } = require('../../config/signature');
+const { signature,cookieName } = require('../../config/signature');
 const { expressjwt: jwt } = require('express-jwt');
 
 const getTokenFromHeader = (req) => {
-    if (req.cookies.Authorization)
-        return req.cookies.Authorization;
+    if (req.headers['auth'])
+        return req.headers['auth'];
 };
 
 module.exports = jwt({
