@@ -12,7 +12,7 @@ module.exports = class AuthService {
 
     async signUp(email, name, password) {
         let userRecord = await this._model.findOneByEmail(email);
-        if (userRecord.error) throw Error('Email is not unique');
+        if (!userRecord.error) throw Error('Email is not unique');
         const passwordHashed = await argon2.hash(password);
 
         this._model.setUser({

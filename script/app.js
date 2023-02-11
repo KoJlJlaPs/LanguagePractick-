@@ -50,24 +50,28 @@ const app = new Vue({
       if(result.message == "Good"){
         this.user.email = result.data.email;
         this.user.displayName = result.data.name;
-        this.user.token = await response.cookie("Authorization");
-        console.log(this.user.token);
+        this.user.token = await response.cookie?.Authorization;
         this.modal = "";
       }else
         this.user.token = "";
-      console.log(result);
     },
-    logout(){}
+    logout(){
+      this.user.token = "";
+    }
   },
-  mounted:function(){
-    this.user.token = document.cookie['session'];
-    console.log(document.cookie['session']);
+  created:async function(){
+    const response = await goToAddress('user/check-cookie',null,"GET",document.cookie.session);
+    const result = await response.json();
+    if(result.cookie)
+    this.user.token = result.cookie;
   }
 });
 
-const START_URL = "http://localhost:3000/";
+
 async function goToAddress(url, body, method = "GET",token = null) {
-  let query = START_URL + url + "?";
+  let query = "http://localhost:3000/" + url;
+  if(body)
+    query+="?";
   for (const key in body) {
     if (Object.hasOwnProperty.call(body, key)) {
       const element = body[key];

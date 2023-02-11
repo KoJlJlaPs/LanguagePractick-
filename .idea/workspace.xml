@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="05f103a7-f541-4538-90e3-9b659fa233e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/auth/isAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/auth/isAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/auth/attachCurrentUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/auth/attachCurrentUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/auth/authServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/auth/authServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/auth/isAuth.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/middleware/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/auth_route.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/auth_route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/routes/word_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/word_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +81,9 @@
       <workItem from="1673535109365" duration="7637000" />
       <workItem from="1675175961643" duration="5464000" />
       <workItem from="1675870260228" duration="6705000" />
+      <workItem from="1676098694356" duration="2220000" />
+      <workItem from="1676144846036" duration="3529000" />
+      <workItem from="1676149976603" duration="1431000" />
     </task>
     <servers />
   </component>

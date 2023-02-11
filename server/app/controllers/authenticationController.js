@@ -31,7 +31,6 @@ class AuthenticationController {
                 res.json({ message: 'Good' });
             })
             .catch((error) => {
-                console.log(error);
                 res.status(301).json({ error: error.message });
             });
     }
@@ -53,7 +52,6 @@ class AuthenticationController {
             .then((data) => {
                 res.statusCode = 200;
                 res.cookie(cookieName,data.token,{maxAge:90000,httpOnly:true});
-                console.log(res.cookie[cookieName]);
                 res.json({
                     message: 'Good',
                     data: {
@@ -61,6 +59,7 @@ class AuthenticationController {
                         name: data.user.name
                     },
                 });
+                res.end();
             })
             .catch((error) => {
                 res.status(404).json({ error: error.message });
@@ -69,6 +68,7 @@ class AuthenticationController {
 
     logout(req,res){
         res.cookie(cookieName,"");
+        res.status(200).json({message:'Good'});
     }
 }
 
