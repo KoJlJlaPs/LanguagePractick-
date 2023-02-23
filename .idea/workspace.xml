@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05f103a7-f541-4538-90e3-9b659fa233e7" name="Changes" comment="">
+    <list default="true" id="596efdf0-4cac-44ea-9510-d04cf34ef944" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/auth/attachCurrentUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/auth/attachCurrentUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/auth/authServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/auth/authServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/auth/isAuth.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/controllers/authenticationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/middleware/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/auth_route.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/auth_route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/routes/word_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/routes/word_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,65 +18,39 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2IAzfGdh4CKOwZSqeGlJMq0ndJn" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2LbtnDVxGZaBHQr5fMlT08iuUZG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/roman/Documents/учеба/верстка/LanguagePractick-/server&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\roman\\Documents\\учеба\\верстка\\LanguagePractick-\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server\app\auth" />
-      <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server\config" />
+      <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server" />
       <recent name="C:\Users\roman\Documents\учеба\верстка\LanguagePractick-\server\app" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="05f103a7-f541-4538-90e3-9b659fa233e7" name="Changes" comment="" />
-      <created>1669639278708</created>
+      <changelist id="596efdf0-4cac-44ea-9510-d04cf34ef944" name="Changes" comment="" />
+      <created>1676151778535</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669639278708</updated>
-      <workItem from="1669639282098" duration="11513000" />
-      <workItem from="1669659138816" duration="11000" />
-      <workItem from="1670263335456" duration="3227000" />
-      <workItem from="1670335157187" duration="4574000" />
-      <workItem from="1670340098271" duration="820000" />
-      <workItem from="1670520841745" duration="411000" />
-      <workItem from="1670599496323" duration="9172000" />
-      <workItem from="1670910849558" duration="7622000" />
-      <workItem from="1670993550551" duration="13048000" />
-      <workItem from="1673335218441" duration="3406000" />
-      <workItem from="1673344991392" duration="1615000" />
-      <workItem from="1673379582707" duration="262000" />
-      <workItem from="1673422478964" duration="10713000" />
-      <workItem from="1673535109365" duration="7637000" />
-      <workItem from="1675175961643" duration="5464000" />
-      <workItem from="1675870260228" duration="6705000" />
-      <workItem from="1676098694356" duration="2220000" />
-      <workItem from="1676144846036" duration="3529000" />
-      <workItem from="1676149976603" duration="1431000" />
+      <updated>1676151778535</updated>
+      <workItem from="1676151784573" duration="449000" />
+      <workItem from="1676831127854" duration="657000" />
+      <workItem from="1677140134044" duration="1438000" />
+      <workItem from="1677183720279" duration="3651000" />
     </task>
     <servers />
   </component>

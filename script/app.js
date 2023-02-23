@@ -50,7 +50,10 @@ const app = new Vue({
       if(result.message == "Good"){
         this.user.email = result.data.email;
         this.user.displayName = result.data.name;
-        this.user.token = await response.cookie?.Authorization;
+        const token = result.data.token;
+        console.log(token);
+        this.user.token = token;
+        localStorage.setItem("authToken",token);
         this.modal = "";
       }else
         this.user.token = "";
@@ -60,13 +63,11 @@ const app = new Vue({
     }
   },
   created:async function(){
-    const response = await goToAddress('user/check-cookie',null,"GET",document.cookie.session);
-    const result = await response.json();
-    if(result.cookie)
-    this.user.token = result.cookie;
-  }
-});
-
+    const token = localStorage.getItem("authToken");
+    console.log(token);
+    if(token)
+      this.user.token = token;
+}});
 
 async function goToAddress(url, body, method = "GET",token = null) {
   let query = "http://localhost:3000/" + url;
