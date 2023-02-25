@@ -24,13 +24,12 @@ class Database {
             const refData = query(ref(database, table), orderByChild(parameter), equalTo(value));
             onValue(refData, (snapshot) => {
                 const snap = snapshot.val();
-                if(snap == null)
-                    resolve({error:'Data don`t founded'});
-                else{
+                if (snap == null) resolve({ error: 'Data don`t founded' });
+                else {
                     const key = Object.keys(snap)[0];
                     const value = {
-                        _id:key,
-                        ...snap[key]
+                        _id: key,
+                        ...snap[key],
                     };
                     resolve(value);
                 }

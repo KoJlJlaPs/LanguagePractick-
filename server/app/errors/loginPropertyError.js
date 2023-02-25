@@ -1,3 +1,4 @@
+// Проверка данных запросы при входе в систему
 module.exports = function (data) {
     return require('./testProperties')(
         [

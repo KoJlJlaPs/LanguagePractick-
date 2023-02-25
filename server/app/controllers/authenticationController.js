@@ -1,7 +1,7 @@
 const testAuthProperty = require('../errors/userPropertyError');
 const testLoginProperty = require('../errors/loginPropertyError');
 const AuthService = require('../auth/authServices');
-const {cookieName} = require('../../config/signature')
+const { cookieName } = require('../../config/signature');
 
 class AuthenticationController {
     constructor() {
@@ -51,12 +51,12 @@ class AuthenticationController {
             .login(data.email, data.password)
             .then((data) => {
                 res.statusCode = 200;
-                res.cookie(cookieName,data.token,{maxAge:90000,httpOnly:true});
+                res.cookie(cookieName, data.token, { maxAge: 90000, httpOnly: true });
                 res.json({
                     message: 'Good',
                     data: {
                         email: data.user.email,
-                        name: data.user.name
+                        name: data.user.name,
                     },
                 });
                 res.end();
@@ -66,9 +66,9 @@ class AuthenticationController {
             });
     }
 
-    logout(req,res){
-        res.cookie(cookieName,"");
-        res.status(200).json({message:'Good'});
+    logout(req, res) {
+        res.cookie(cookieName, '');
+        res.status(200).json({ message: 'Good' });
     }
 }
 

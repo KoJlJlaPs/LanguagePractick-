@@ -1,3 +1,4 @@
+// Проверка приходящих данных при авторизации пользователя
 module.exports = function (data) {
     return require('./testProperties')(
         [

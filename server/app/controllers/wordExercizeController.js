@@ -12,20 +12,19 @@ class WordExercize {
 
     // Получение слова по теме
     async getExercizeType(req, res) {
-        const type = req.params.type;
+        const data = req.query;
+        const wordTopicName = data['topic'];
         let result = true;
         if (
             this._type !== '' ||
-            this._type !== type ||
+            this._type !== wordTopicName ||
             (this._wordsByType.length > 0 && this._wordByTypeNumber === this._wordsByType.length)
         )
-            result = await this._setWordsByType(type);
+            result = await this._setWordsByType(wordTopicName);
         if (result) {
             const word = this._wordsByType[this._wordByTypeNumber++];
-            res.end(
-                'Request result = in Russia - ' + word.russia + ', in English - ' + word.english,
-            );
-        } else res.end(`Data don't exist`);
+            res.status(200).json({ message: 'Good', word });
+        } else res.status(301).json({ error: "Data don't founded" });
     }
 
     // Получение слова
@@ -33,7 +32,7 @@ class WordExercize {
         if (this._words.length === 0 || this._wordNumber === this._words.length)
             await this._setWords();
         const word = this._words[this._wordNumber++];
-        res.end('Request result = in Russia - ' + word.russia + ', in English - ' + word.english);
+        res.status(200).json({ message: 'Good', word });
     }
 
     // Установление всех слов

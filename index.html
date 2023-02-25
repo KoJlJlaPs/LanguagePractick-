@@ -292,7 +292,7 @@
     <!-- /feedback -->
 </template>
 <!-- Верстка страницы тренажеров -->
-  <template v-else-if="page == 'exercize'">
+  <template v-else-if="page == 'exercise'">
   <!-- /header ne do konca -->
   <main>
     <section class="train-content container">
@@ -302,22 +302,12 @@
         <button class="btn btn-reset">Сбросить прогресс</button>
         
         <button class="btn"><img src="../../img/speaker.png" alt="speaker" width="20px"></button>
-         <span class="word">FUCK OFF</span>
-          <div class="btn btn-rad">
-          <input type="radio" id="contactChoice1" name="contact" value="иди нахуй" />
-         <label for="contactChoice1">иди нахуй</label>
-          </div>
-          <div class="btn btn-rad">
-          <input type="radio" id="contactChoice2" name="contact" value="сука" />
-          <label for="contactChoice2">сука</label>
-         </div>
-          <div class="btn btn-rad">
-          <input type="radio" id="contactChoice3" name="contact" value="руку нахуй убери" />
-          <label for="contactChoice3">руку нахуй убери</label>
-          </div>
-          <div class="btn btn-rad">
-          <input type="radio" id="contactChoice4" name="contact" value="я просто хочу быть счастливым" />
-          <label for="contactChoice4" >я просто хочу быть счастливым</label>
+         <span class="word">{{currentWords.correctAnswer[currentWords.lang]}}</span>
+
+         <!-- Варианты -->
+          <div class="btn btn-rad" v-for="item in currentWords.answers">
+            <input type="radio" id="contactChoice1" name="contact" value="{{item[getOppositeLang()]}}" />
+            <label for="contactChoice1">{{item[getOppositeLang()]}}</label>
           </div>
 
            <button class="btn btn-next">Следующее слово</button>
