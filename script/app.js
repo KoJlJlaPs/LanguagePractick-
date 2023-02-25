@@ -57,6 +57,9 @@ const app = new Vue({
     },
     logout(){
       this.user.token = "";
+    },
+    goExercize(){
+      this.page = "exercize";
     }
   },
   created:async function(){
