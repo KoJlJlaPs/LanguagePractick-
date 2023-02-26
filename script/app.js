@@ -1,7 +1,7 @@
 const app = new Vue({
   el: "#app",
   data: {
-    page: "exercise",
+    page: "main",
     modal: "",
     loginData: {
       email: "",
@@ -59,7 +59,6 @@ const app = new Vue({
         this.user.email = result.data.email;
         this.user.displayName = result.data.name;
         const token = result.data.token;
-        console.log(token);
         this.user.token = token;
         localStorage.setItem("authToken",token);
         this.modal = "";
@@ -69,6 +68,7 @@ const app = new Vue({
       this.user.token = "";
     },
     goExercise() {
+      if(!this.user.token)return;
       this.page = "exercise";
       this.getTestAnswers();
     },
@@ -102,14 +102,10 @@ const app = new Vue({
     },
   },
   created: async function () {
-    const response = await goToAddress(
-      "user/check-cookie",
-      null,
-      "GET",
-      document.cookie.session
-    );
+    const token = localStorage.getItem("authToken");
+    const response = await goToAddress("check-cookie",null,null,token);
     const result = await response.json();
-    if (result.cookie) this.user.token = result.cookie;
+    if(!result.error) this.user.token = token;
   },
 });
 
@@ -122,10 +118,8 @@ async function goToAddress(url, body, method = "GET", token = null) {
       query += key + "=" + element.replaceAll(" ", "%") + "&";
     }
   }
-  const headers = {
-    "Content-Type": "application/json;charset=utf-8",
-  };
-  if (token) headers["auth"] = token;
+  const headers = {"Content-Type": "application/json;charset=utf-8"};
+  if (token) headers["cookie"] = "auth:"+token;
   return await fetch(query, {
     method,
     headers,

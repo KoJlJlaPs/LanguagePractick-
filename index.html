@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lenguage in word</title>
+  <title>Language in word</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
       <ul class="nav__items">
         <li class="nav__items__list">
          <span class="nav-item"> 
-          <a href="#" class="list__link"> Практикум</a>
+          <a href="#" class="list__link" @click="goExercise"> Практикум</a>
             <img class="drop-down" src="./img/drop-down-btn.svg" alt="drop-down-btn">
         </span>
         </li>
@@ -306,7 +306,7 @@
 
          <!-- Варианты -->
           <div class="btn btn-rad" v-for="item in currentWords.answers">
-            <input type="radio" id="contactChoice1" name="contact" value="{{item[getOppositeLang()]}}" />
+            <input type="radio" id="contactChoice1" name="contact" value="item[getOppositeLang()]" />
             <label for="contactChoice1">{{item[getOppositeLang()]}}</label>
           </div>
 
