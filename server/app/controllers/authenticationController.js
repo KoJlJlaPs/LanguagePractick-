@@ -51,12 +51,13 @@ class AuthenticationController {
             .login(data.email, data.password)
             .then((data) => {
                 res.statusCode = 200;
-                res.cookie(cookieName, data.token, { maxAge: 90000, httpOnly: true });
+                res.setHeader("Set-Cookie", "auth=" + data.token);
                 res.json({
                     message: 'Good',
                     data: {
                         email: data.user.email,
                         name: data.user.name,
+                        token:data.token
                     },
                 });
                 res.end();

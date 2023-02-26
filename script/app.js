@@ -58,7 +58,10 @@ const app = new Vue({
       if (result.message == "Good") {
         this.user.email = result.data.email;
         this.user.displayName = result.data.name;
-        this.user.token = await response.cookie?.Authorization;
+        const token = result.data.token;
+        console.log(token);
+        this.user.token = token;
+        localStorage.setItem("authToken",token);
         this.modal = "";
       } else this.user.token = "";
     },
