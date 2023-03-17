@@ -103,9 +103,11 @@ const app = new Vue({
   },
   created: async function () {
     const token = localStorage.getItem("authToken");
-    const response = await goToAddress("check-cookie",null,null,token);
-    const result = await response.json();
-    if(!result.error) this.user.token = token;
+    if(token){
+      const response = await goToAddress("check-cookie",null,null,token);
+      const result = await response.json();
+      if(!result.error) this.user.token = token;
+    }
   },
 });
 
@@ -118,7 +120,10 @@ async function goToAddress(url, body, method = "GET", token = null) {
       query += key + "=" + element.replaceAll(" ", "%") + "&";
     }
   }
-  const headers = {"Content-Type": "application/json;charset=utf-8"};
+  const headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Origin":"http://localhost:63342"
+  };
   if (token) headers["cookie"] = "auth:"+token;
   return await fetch(query, {
     method,

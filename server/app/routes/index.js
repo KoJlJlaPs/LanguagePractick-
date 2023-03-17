@@ -1,7 +1,9 @@
 const setWordRoutes = require('./word_routes');
 const setUserRoutes = require('./auth_route');
+const attachCurrentUser = require('../auth/attachCurrentUser');
 
 module.exports = function (app) {
     app.use('/words', setWordRoutes());
     app.use('/user', setUserRoutes());
+    app.get('/check-cookie',attachCurrentUser);
 };

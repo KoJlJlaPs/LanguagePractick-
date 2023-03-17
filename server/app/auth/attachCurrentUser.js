@@ -28,7 +28,9 @@ module.exports = async (req, res, next) => {
         if (!userRecord) return res.status(401).send({ message: 'User not found' });
         return next();
     }
-    if (req.url === '/check-cookie') return res.status(202).send({ error: 'Cookie Not Found' });
+
+    if (req.url === '/check-cookie')
+        return res.status(202).send({ error: 'Cookie Not Found' });
 
     return res.status(401).send({ error: 'No authorization token was found' });
 };

@@ -50,7 +50,7 @@ module.exports = class AuthService {
             name: user.name,
             email: user.email,
         };
-        const expiration = '6h';
+        const expiration = '2h';
 
         return jwt.sign({ data }, signature, { expiresIn: expiration });
     }

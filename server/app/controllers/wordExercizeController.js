@@ -95,5 +95,5 @@ function shuffle(array) {
 }
 
 module.exports = {
-    Exercize: WordExercize,
+    Exercise: WordExercize,
 };
